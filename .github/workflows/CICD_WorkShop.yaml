@@ -25,8 +25,8 @@ jobs:
               ignore-unfixed: true
               format: 'table'
               output: 'trivy-results.txt'
-              #severity: 'HIGH'
-              severity: 'CRITICAL'
+              severity: 'HIGH'
+              #severity: 'CRITICAL'
               exit-code: 1
         - 
             name: Slack Notification
@@ -34,6 +34,7 @@ jobs:
             uses: rtCamp/action-slack-notify@v2
             env:
               SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
+              SLACK_COLOR: ${{ job.status }}
               SLACK_MESSAGE: 'I am failure...:robot_face:'
               SLACK_TITLE: Can't make a decision
               SLACK_USERNAME: DipSA 57 CICD
