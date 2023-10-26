@@ -88,7 +88,7 @@ jobs:
             name: Slack Notification
             uses: rtCamp/action-slack-notify@v2
             env:
-              SLACK_CHANNEL: cawork
+              SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL1 }}
               SLACK_MESSAGE: | 
                 *Name*: Xin YiHao
                 *Matriculation*: A0287265R
