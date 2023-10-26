@@ -32,7 +32,7 @@ jobs:
             if: failure()
             uses: rtCamp/action-slack-notify@v2
             env:
-              SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
+              SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL1 }}
               SLACK_MESSAGE: This is a test
               SLACK_TITLE: Can't make a decision
               SLACK_USERNAME: DipSA 57 CICD
