@@ -36,14 +36,14 @@ jobs:
               SLACK_MESSAGE: This is a test
               SLACK_TITLE: Can't make a decision
               SLACK_USERNAME: DipSA 57 CICD
-              SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+              SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK1 }}
         -
             name: Upload scan report
             if: failure()
             uses: MeilCli/slack-upload-file@v3
             with:
-              slack_token: ${{ secrets.SLACK_TOKEN }}
-              channel_id: ${{ secrets.SLACK_CHANNEL_ID }}
+              slack_token: ${{ secrets.SLACK_TOKEN1 }}
+              channel_id: ${{ secrets.SLACK_CHANNEL_ID1 }}
               file_path: 'trivy-results.txt'
               initial_comment: 'test'
 
@@ -96,5 +96,5 @@ jobs:
                 *Image*: https://hub.docker.com/repository/docker/1434161233/cicd
               SLACK_TITLE: Image build and signed
               SLACK_USERNAME: DipSA 57 CICD
-              SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+              SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK1 }}
               
