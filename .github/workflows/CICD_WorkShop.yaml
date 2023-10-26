@@ -34,7 +34,7 @@ jobs:
             uses: rtCamp/action-slack-notify@v2
             env:
               SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL1 }}
-              SLACK_MESSAGE: This is a test
+              SLACK_MESSAGE: 'I am failure...:robot_face:'
               SLACK_TITLE: Can't make a decision
               SLACK_USERNAME: DipSA 57 CICD
               SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK1 }}
@@ -90,6 +90,7 @@ jobs:
             env:
               SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL1 }}
               SLACK_MESSAGE: | 
+                :fire:
                 *Name*: Xin YiHao
                 *Matriculation*: A0287265R
                 *Email*:xinyihao1999@gmail.com
