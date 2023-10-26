@@ -25,26 +25,26 @@ jobs:
               ignore-unfixed: true
               format: 'table'
               output: 'trivy-results.txt'
-              #severity: 'HIGH'
-              severity: 'CRITICAL'
+              severity: 'HIGH'
+              #severity: 'CRITICAL'
               exit-code: 1
         - 
             name: Slack Notification
             if: failure()
             uses: rtCamp/action-slack-notify@v2
             env:
-              SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL1 }}
+              SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
               SLACK_MESSAGE: 'I am failure...:robot_face:'
               SLACK_TITLE: Can't make a decision
               SLACK_USERNAME: DipSA 57 CICD
-              SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK1 }}
+              SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
         -
             name: Upload scan report
             if: failure()
             uses: MeilCli/slack-upload-file@v3
             with:
-              slack_token: ${{ secrets.SLACK_TOKEN1 }}
-              channel_id: ${{ secrets.SLACK_CHANNEL_ID1 }}
+              slack_token: ${{ secrets.SLACK_TOKEN }}
+              channel_id: ${{ secrets.SLACK_CHANNEL_ID }}
               file_path: 'trivy-results.txt'
               initial_comment: 'test'
 
@@ -88,7 +88,7 @@ jobs:
             name: Slack Notification
             uses: rtCamp/action-slack-notify@v2
             env:
-              SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL1 }}
+              SLACK_CHANNEL: ${{ secrets.SLACK_CHANNEL }}
               SLACK_MESSAGE: | 
                 :fire:
                 *Name*: Xin YiHao
@@ -98,5 +98,5 @@ jobs:
                 *Image*: https://hub.docker.com/repository/docker/1434161233/cicd
               SLACK_TITLE: Image build and signed
               SLACK_USERNAME: DipSA 57 CICD
-              SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK1 }}
+              SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
               
